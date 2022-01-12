@@ -1,4 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-html{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+/*é adicionado ao css primeiro, mostra qual o tipo de fonte irá abrir de acordo com o site. A fonte foi pega gratuitamente no googlefonts. Lá ele mostra os tipos de fonte e os codigo em style para a importação. Esse codigo foi gerado no googlefonts, em embed font, na opção @import.
+*/
+{
+    box-sizing: border-box;
+}
+
+:root{
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    /*onde será alterado o html,o root é pq está na raiz do documento*/
+    --color-primary: #ffc500; 
+    /* para criar uma variável utiliza-se --, essa variável de cor foi criada para não precisar ficar digitando a o numero da cor hexadecimal assim fica mais fácil, o nome é colo-primary porque é a cor principal do site que será mais utilizada.*/
+    --default-padding: 1rem;
+
+}
+
+body{
+    margin: 0;
+    padding-top: 7.75rem;
+}
+
+ul{
+    display: flex; /*deixa a lista ordenada em paisagem*/
+    list-style: none; /*adiciona os estilos de lista*/
+    padding-left: 0; /* ajusta o tamanho da padiding da pagina, com esse valor os nomes ficaram alinhados à esqueda*/
+
+}
+
+
+.navbar{
+    position: fixed; /*deixa a caixa da navbar fixa na navegação  da página*/
+    z-index: 1; /*funciona como camada, permite que o elemento sobreponha o outro como uma camada*/
+    display: grid; /* mostra que o tipo de display será grid*/
+    grid-template-columns: 1fr 9fr; /* informa a quantidade de colunas e o tamanho de cada.No caso aqui vai ter 1fr para a logo e 9fr para o restante do conteudo da barra*/
+    align-items: center;
+    top: 0;
+    left: 0;
+        
+    width: 100%;
+    height: 7.75rem;
+    
+    padding:0 1rem; /*quando coloca mais de um valor em rem, o primeiro valor e o tamanho pra cima e para baixo e osegundo valor é esqueda e direita. */
+    
+    background-color: #000; /* serve para adcionar a cor do fundo. 1ºn vermelho / 2ºn verde / 3ºn azul / 4ºn transparencia; como são hexadecimais eles trabalham de 0 a F */
+    color: #fff; /*adiciona cor a fonte*/
+    
+}
+
+.navbar__links {
+    justify-self: end; /*é uma propriedade de alinhamento para itens que estão dentro de uma grid*/
+}
+
+.navbar__links li{
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-right: 4rem; /*existem dois  valores a ser trabalhado, px que equivale a pixel e ren. se quiser adicionar pixels dentro de ren é só fazer ex: quero adicionar 10px. pega o 10px e divide por 16 para saber qual valor aplicar. */
+}
+.navbar__links a {
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    /* o navbar__links a, serviu para atingir apenas os itens da ul em que está navbar__links e atingiu apenas os links ou seja o elemento a.*/
+}
+
+.navbar__links a:hover{
+    /*o hover serve como um estado para o link, quando a gente passar o mouse em cima do link ele muda de cor quando adiciona o color*/
+
+    color: var(--color-primary);
+} /*o hover serve como um estado para o link, quando a gente passar o mouse em cima do link ele muda de cor quando adiciona o color*/
+
+.logo-studion{
+    font-size: 2.375rem;
+    font-weight: 900;
+    line-height: 1ch;/*é o tamanho do espaçamento entre linhas"relativo ao tamanho da altura do glifo 0 da fonte*/
+    text-transform: uppercase;
+    text-align: right;
+    /*foi adicionado o peso da fonte que poderia ser black ou o nomero para ficar mais forte. Pode pegar no google fonts também.
+    E também foi colocado todo o texto em caixa alta.
+    observe que a classe .logo-studion está no body, h1 do html.
+    O alinamento de toda a logo foi a direita */
+}
+.copy--primary{
+    color: var(--color-primary);
+}
+.logo-studion_subtitle{
+    font-size: .875rem;
+    font-weight: 300;
+    
+}
+
+#slider { /* para selecionar um elemento por id(que está localizado no doc HTML) utiliza-se #.*/
+
+    padding: var(--default-padding) ; /* pode ser aribuido até quatro valores. onde o primeiro valor vale para todos os lados, mas quando adicionamos mais de um, o primeiro é para cima e baixo e o segundo valor é direita e esquerda.*/
+    background-color: #000;
+    color: #fff;
+    /* a cor do fundo da página*/
+    /* 1 forma de adicionar imagem de backgoun, 
+    background-image: url('./images/banner.jpg');  
+    usado para adicionar uma imagem de background, dentro do url pode ser adicionado com aspas simples ou duplas, antes de digitar o caminho da imagem adicione o ./ para o site ficar relativo ao lugar onde fica o style css.
+    
+    background-size: cover;  define o tamanho da imagem ao fundo. A opção cover foi usada para que a imagem preencha 100% de largura e altura sem deformar a imagem.
+    
+    background-repeat: no-repeat; evita que a imagem repita no backgound;
+    
+    background-position: center ; /* para que a imagem fique posicionada no centro do backgorund*/
+}
+.slide{
+    position: relative; /*não deixa elementos filho dessa classe saia para fora do elemento slide*/ 
+    height: calc(100vh - 7.15rem); /* foi usado na altura a função calc que calculou 100% da vh - 7.74rem */
+}
+.slide__background-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*seguindo a mesma logica da primeira dica de adicionar imagem ao background*/
+    object-position: center;
+}
+
+.slide_copy{
+    position: absolute;
+    top: 2rem; /*permite que o elemento fique no topo*/
+    left: 50vw ;/*deixou o elemento para a metade da wieport a esqueda*/
+}
+
+.slide_copy h6 {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1875rem;/* serve para o espaçamento entre caracteres*/
+}
+.slide_copy h2{
+    font-size: 6.25rem;
+    text-transform: uppercase;
+    line-height: 6.25rem;
+}
+.slide_copy h2{
+    display: block; /* faz com que haja uma quebra de linha, e que o texto fique com a quebra mesmo se a largura da tela mudar.*/
+}
+
+.btn{
+    cursor: pointer; /*faz com que quando passar o mouse em cima o cursor vire uma mão*/
+    padding: 1rem 2.5rem;/* foi definido um padding para a altura de espaçamento e a largura de espaçamento entre o texto e as bordas do botão*/
+    color: var(--color-primary);
+    border: 0.125rem solid #fff;
+    /*adicionamos tres valores para a borda, valor da espessura da linha, o estilo da linha e a cor da borda*/
+    border-radius: 5rem;/* serve para mudar o canto da borda, nesse caso deixou os cantos mais arredondados*/ 
+    background: unset; /*reseta a propriedade para um valor mais neutro possível. Nesse caso deixou o botão com um background transparente*/
+    font-size: .9375tem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: 0.5s all ease;/* configura a transição de animação. O 0.5s é o tempo da transição all será o que eu quero transicionar que no caso é tudo e o ease é a curva de animação.*/
+}
+
+.btn:hover, 
+.btn:active,
+.btn:focus {
+border-color: var(--color-primary);
+background-color: var(--color-primary);
+color: #fff;
 }
