@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
-/*é adicionado ao css primeiro, mostra qual o tipo de fonte irá abrir de acordo com o site. A fonte foi pega gratuitamente no googlefonts. Lá ele mostra os tipos de fonte e os codigo em style para a importação. Esse codigo foi gerado no googlefonts, em embed font, na opção @import.
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto&display=swap');
+/*é adicionado ao css primeiro, mostra qual o tipo de fonte irá abrir de acordo com o site. A fonte foi pega gratuitamente no googlefonts. Lá ele mostra os tipos de fonte e os codigo em style para a importação. Esse codigo foi gerado no googlefonts, em embed font, na opção @import. dentro do código há a importação de duas fontes para evitar lentidão no site.
 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css');
+/*versão mais recente encontrada no site cdnjs.com */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+/* também encontrado no cdnjs.com, abriga os icones do facebook etc.*/
+
 {
     box-sizing: border-box;
 }
@@ -9,15 +14,29 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     /*onde será alterado o html,o root é pq está na raiz do documento*/
+    --color-copy: #333;
     --color-primary: #ffc500; 
     /* para criar uma variável utiliza-se --, essa variável de cor foi criada para não precisar ficar digitando a o numero da cor hexadecimal assim fica mais fácil, o nome é colo-primary porque é a cor principal do site que será mais utilizada.*/
     --default-padding: 1rem;
+    color: var(--color-copy);
+    /*cor de texto padrão do site */
 
 }
 
 body{
     margin: 0;
     padding-top: 7.75rem;
+}
+
+head,
+main,
+footer{
+    overflow-x: hidden; /* vai afetar as tres propriedades e oculta qualquer conteudo de x além da largura que ele viria */
+}
+
+.container{
+    max-width: 1140px ; /*quando queremos uma largura maxima para garantir que os objetos fiquem no meio da página.*/
+    margin: 0 auto;
 }
 
 ul{
@@ -31,20 +50,22 @@ ul{
 .navbar{
     position: fixed; /*deixa a caixa da navbar fixa na navegação  da página*/
     z-index: 1; /*funciona como camada, permite que o elemento sobreponha o outro como uma camada*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* serve para adcionar a cor do fundo. 1ºn vermelho / 2ºn verde / 3ºn azul / 4ºn transparencia; como são hexadecimais eles trabalham de 0 a F */
+    color: #fff; /*adiciona cor a fonte*/
+}
+
+.navbar__container{
     display: grid; /* mostra que o tipo de display será grid*/
     grid-template-columns: 1fr 9fr; /* informa a quantidade de colunas e o tamanho de cada.No caso aqui vai ter 1fr para a logo e 9fr para o restante do conteudo da barra*/
     align-items: center;
-    top: 0;
-    left: 0;
         
     width: 100%;
     height: 7.75rem;
     
     padding:0 1rem; /*quando coloca mais de um valor em rem, o primeiro valor e o tamanho pra cima e para baixo e osegundo valor é esqueda e direita. */
-    
-    background-color: #000; /* serve para adcionar a cor do fundo. 1ºn vermelho / 2ºn verde / 3ºn azul / 4ºn transparencia; como são hexadecimais eles trabalham de 0 a F */
-    color: #fff; /*adiciona cor a fonte*/
-    
 }
 
 .navbar__links {
@@ -80,18 +101,21 @@ ul{
     observe que a classe .logo-studion está no body, h1 do html.
     O alinamento de toda a logo foi a direita */
 }
-.copy--primary{
-    color: var(--color-primary);
-}
+
 .logo-studion_subtitle{
+    display: block;
     font-size: .875rem;
     font-weight: 300;
-    
+}
+
+.copy--primary{
+    color: var(--color-primary);
 }
 
 #slider { /* para selecionar um elemento por id(que está localizado no doc HTML) utiliza-se #.*/
 
-    padding: var(--default-padding) ; /* pode ser aribuido até quatro valores. onde o primeiro valor vale para todos os lados, mas quando adicionamos mais de um, o primeiro é para cima e baixo e o segundo valor é direita e esquerda.*/
+    padding: var(--default-padding); /* pode ser aribuido até quatro valores. onde o primeiro valor vale para todos os lados, mas quando adicionamos mais de um, o primeiro é para cima e baixo e o segundo valor é direita e esquerda*/
+  
     background-color: #000;
     color: #fff;
     /* a cor do fundo da página*/
@@ -104,10 +128,11 @@ ul{
     background-repeat: no-repeat; evita que a imagem repita no backgound;
     
     background-position: center ; /* para que a imagem fique posicionada no centro do backgorund*/
+    
 }
 .slide{
     position: relative; /*não deixa elementos filho dessa classe saia para fora do elemento slide*/ 
-    height: calc(100vh - 7.15rem); /* foi usado na altura a função calc que calculou 100% da vh - 7.74rem */
+    height: calc(90vh - 7.75rem); /* foi usado na altura a função calc que calculou 100% da vh - 7.75rem */
 }
 .slide__background-image{
     width: 100%;
@@ -115,20 +140,29 @@ ul{
     object-fit: cover;
     /*seguindo a mesma logica da primeira dica de adicionar imagem ao background*/
     object-position: center;
+    
 }
 
 .slide_copy{
     position: absolute;
-    top: 2rem; /*permite que o elemento fique no topo*/
-    left: 50vw ;/*deixou o elemento para a metade da wieport a esqueda*/
-}
+    top: 0; /*permite que o elemento fique no topo*/
+    left:0;/*deixou o elemento para a metade da wieport a esqueda*/
+    width: 45%;
+    height: 100%;
 
+    display: grid;
+    padding-left: 50vw;
+    align-items: center;
+}
 .slide_copy h6 {
     font-size: 0.9375rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1875rem;/* serve para o espaçamento entre caracteres*/
+    margin: 0;
 }
+
+
 .slide_copy h2{
     font-size: 6.25rem;
     text-transform: uppercase;
@@ -140,23 +174,246 @@ ul{
 
 .btn{
     cursor: pointer; /*faz com que quando passar o mouse em cima o cursor vire uma mão*/
-    padding: 1rem 2.5rem;/* foi definido um padding para a altura de espaçamento e a largura de espaçamento entre o texto e as bordas do botão*/
+    width: 12rem;
+    padding: 1rem 1rem;/* foi definido um padding para a altura de espaçamento e a largura de espaçamento entre o texto e as bordas do botão*/
     color: var(--color-primary);
     border: 0.125rem solid #fff;
     /*adicionamos tres valores para a borda, valor da espessura da linha, o estilo da linha e a cor da borda*/
     border-radius: 5rem;/* serve para mudar o canto da borda, nesse caso deixou os cantos mais arredondados*/ 
     background: unset; /*reseta a propriedade para um valor mais neutro possível. Nesse caso deixou o botão com um background transparente*/
-    font-size: .9375tem;
+    font-size: .87rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    transition: 0.5s all ease;/* configura a transição de animação. O 0.5s é o tempo da transição all será o que eu quero transicionar que no caso é tudo e o ease é a curva de animação.*/
+    letter-spacing: 0.087rem;
+    transition: 0.3s all ease;/* configura a transição de animação. O 0.5s é o tempo da transição all será o que eu quero transicionar que no caso é tudo e o ease é a curva de animação.*/
 }
-
 .btn:hover, 
 .btn:active,
-.btn:focus {
+.btn:focus,
+.btn--institutional {
 border-color: var(--color-primary);
 background-color: var(--color-primary);
 color: #fff;
+/*essa é a maneira de fazer um seletor que vai funcionar para mais de um caso */
+}
+.counter{
+    background-color: var(--color-primary);
+    color: #fff;
+    text-transform: uppercase;
+}
+#counter {
+    background-color: var(--color-primary);
+    /*como o counter é id, usa-se #*/
+    color: #fff;
+    text-transform: uppercase; /* a cor das fontes do ul foram mudadas logo no couter por ele ser um elemento pai da sessão*/
+}
+
+.counter_container{
+    display: grid; /* o tipo de display fo grid para poder adicionar as colunas*/
+    grid-template-columns:   repeat(auto-fill, minmax(300px, 1fr)); /*no repeat foram feitas, auto-fill faz com que o css calcule automaticamente quantas colunas ele deve ter, minmax define o tamanho minimo e maximo 3 colunas divididas em 1 fração pra cada, */
+    place-items: center ;/* é uma unidade agregadora, serve tanto como justify itens e aling itens e serve para afetar os filhos, afeta tanto horizontal quanto vertical*/ 
+    padding: 4.375rem 0;
+    
+}
+
+.counter_container h3 {
+    font-size: 2.1875rem;
+}
+.counter_container h3 small {
+    display:block;
+    font-size: 1.25rem;
+}
+
+.institutional {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 3.125rem ;/*serve para definir a distancia entre um elemento e outro, no caso a imagem separanda do texto*/
+    align-items: center;
+    padding: 4.375rem;
+}
+
+.institutional__image{
+    max-width: 550px;
+}
+
+.institutional_copy {
+    padding: 0 1.875rem;
+}
+
+.institutional_copy h6{
+    font-size: .875rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.institutional_copy h4{
+    font-size: 1.5625rem;
+    margin-top: 1rem;
+}
+
+.institutional p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6875rem;
+    margin-bottom: 0;
+    margin-bottom: 2.5rem;/*para ser adicionada uma outra margem*/
+}
+
+.btn--institutional:hover{
+    color:var(--color-copy);
+    background: unset;
+    box-shadow: 0 1rem 1rem #0006;; /* onde 0=x (largura), y=1rem de (altura), 1rem de blur, cor da sombra */ 
+}
+
+.quote {
+    background-image: url(./images/parallax.jpg);
+    background-attachment: fixed;/*efeito de paralax na página*/
+    background-repeat: no-repeat; /*para não repetir a imagem de background*/
+    background-size: cover;
+    background-position: center;
+    /*efeito de paralax completo. Cria um efeito de profundidade na imagem assim pensando que a imagem está sempre fixa
+    atrás do site.*/
+}
+
+.quote_container{
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    min-height: 80vh; /* A altura minima da altura disponível*/
+}
+
+.quote_copy{
+    background-color: #fff;
+    padding: 5.625rem 4.375rem;
+
+}
+.quote_copy h6{
+    font-size: .9375rem;
+    font-weight: 400;
+    letter-spacing: .1875rem;
+    line-height: 1.4375rem;
+    max-width: 53ch; /*definido a largura máxima por caractere*/
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.quote_copy h2{
+    line-height: 5rem;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: -.1875rem;;
+    margin: 1.875rem 0;
+}
+.quote_copy h2 span{
+    display: block;
+}
+
+
+.btn--quote{
+    color: var(--color-copy);
+    border-color: var(--color-copy);
+    background: unset;
+    
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.footer_container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    padding: 5rem 0 3.75rem 0;
+}
+.footer .logo-studion{
+    justify-self: start; /*quando possui o start no justify self, ele se alinha no inicio que é a mesma coisa que se alinhar a esquerda.*/
+    margin: 0;
+}
+
+.logo-studion_subtitle{
+    display: block;
+}
+
+.footer_form {
+    display: grid;
+    grid-template-columns: 10ch auto;
+    gap: 1.25rem;
+    place-items: center;
+}
+
+.footer_form label {
+    font-size: .875;
+    font-weight: 300;
+    text-align: center;
+
+    width: 100%;
+}
+
+.footer_email {
+    display: grid;
+    grid-template-columns: auto 3.375rem; 
+    width: 100%;
+}
+.footer_form input{
+    background-color: var(--color-primary);
+    border: unset;
+    padding: .95rem;
+    font-size: .875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.footer_form input::placeholder{
+    color: #000;
+}
+
+.footer_form input:focus{
+    outline: unset;
+}
+
+.footer_form button{
+    cursor: pointer;
+    border: unset;
+    height: 100%;
+    transition: 0.3s all ease;
+}
+
+.footer_form button:hover{
+    color: #fff;
+    background-color: var(--color-copy) ;
+}
+
+.footer_social {
+    justify-self: end;
+}
+
+.footer_social a,
+.footer_social a:visited,
+.footer_social a:active {
+color: #fff;
+margin-left: 0.2rem;
+}
+
+.footer_social a .fa-twitter,
+.footer_social a:visited .fa-twitter,
+.footer_social a:active .fa-twitter {
+color: #000;
+}
+
+.footer hr{
+    border-color: #fff4;/*no caso o fff é referente a cor e o 4 é a transparencia da cor*/
+    margin: 0;
+}
+
+.footer p {
+    text-align: center;
+    font-size: .875rem;
+    font-weight: 300;
+    margin: 2.5rem 0;
 }

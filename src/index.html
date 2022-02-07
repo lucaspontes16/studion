@@ -14,17 +14,18 @@
 <title>Studion</title> <!-- o titulo da aba da página-->
 
 <body><!-- o corpo do documento-->
-    <nav class="navbar"> <!--é importante por conta da semantica do, para que os sistemas de busca e pessoas com deficiencia visual encontrem a página.-->
+    <nav class="navbar">
+        <div class="container navbar__container" >        <!--é importante por conta da semantica do, para que os sistemas de busca e pessoas com deficiencia visual encontrem a página.-->
 
-        <h1 class="logo-studion"> 
+         <h1 class="logo-studion"> 
             Studi<span class="copy--primary">on</span>
             <span class="logo-studion_subtitle">Eventos</span>
-        </h1> 
+         </h1> 
 
-        <!-- h1 é o tamanho da fonte podendo ir até h6 que seria a menor fonte, span permite que estilize uma parte do texto de forma diferente.Foi adiconado classe no Studi e no on e eventos porque será a logo do cabeçalho.
-        -->
+            <!-- h1 é o tamanho da fonte podendo ir até h6 que seria a menor fonte, span permite que estilize uma parte do texto de forma diferente.Foi adiconado classe no Studi e no on e eventos porque será a logo do cabeçalho.
+             -->
 
-        <ul class="navbar__links"> <!-- tive que criar outro elemento lista para não afetar a linha debaixo-->
+            <ul class="navbar__links"> <!-- tive que criar outro elemento lista para não afetar a linha debaixo-->
             <li><!--para adicionar um tópico. Cada <li></li> vai ser um tópico.-->
                 <a href="#empresa" target="_blank">
                     Empresa
@@ -51,7 +52,8 @@
                     Contatos
                 </a>
             </li>
-        </ul>
+            </ul>
+        </div>
     </nav>
     <header> <!--A parte que é utilizada acima da dobra do site. Como se fosse um cabeçalho-->
 
@@ -64,65 +66,115 @@
                 <!-- segunda forma de adicionar a imagem ao background-->
                 <div class="slide_copy">
                     <h6> 
-                        <span class="copy--primary"> Próximo evento </span> - Dia 25 de      setembro as 19h
+                        <span class="copy--primary">Próximo evento</span> - Dia 25 de setembro as 19h
                     </h6>
-                    <h2><span class="copy--primary">Creative</span> Minds</h2>
-                    <button class="btn bt--slide">Saiba mais</button> <!--adiciona um botão com nome. Em class há duas classes btn e btn--slide-->
+                    <h2><span class="copy--primary">Creative</span>  Minds</h2>
+                    <button class="btn btn--slide">Saiba mais</button> <!--adiciona um botão com nome. Em class há duas classes btn e btn--slide-->
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section> <!--é similar ao elemento div, por isso adiciona-se um id para melhor identificação.-->
-             <ul>
-                 <li><h3> + de 500</h3>eventos realizados</li>
-                 <li><h3>+ de 1.000.000</h3> de ingressos vendidos</li>
-                 <li><h3>+ de 300</h3>empresas atendidas</li>
+        <section id="counter" class="counter"> <!--é similar ao elemento div, por isso adiciona-se um id para melhor identificação. Id definido foi counter, para melhor adequação ao java script-->
+             <ul class="container counter_container"> <!--Counter__container porque ele é a caixa que contem o conteudo do counter-->
+                 <li>
+                     <h3> + de 500
+                        <small>
+                            eventos realizados
+                            <!--foi utilizado o small para não criar outro elemento separado do h3-->
+                        </small>
+                     </h3>
+                    </li>
+                 <li>
+                     <h3>
+                         + de 1.000.000
+                         <small>
+                            de ingressos vendidos
+                        </small>
+                        </h3> 
+                    </li>
+                 <li>
+                     <h3>
+                     + de 300
+                     <small>
+                        empresas atendidas
+                     </small>
+                 </h3>
+                    
+                </li>
              </ul>
              </section>
 
-        <section>
-            <div>
-                <img src="./images/institutional.jpg" /> <!--adiciona uma imagem à página-->
+        <section class="container institutional">
+            <img class="institutional__image" src="./images/institutional.jpg" alt="stuion on institutional"> <!--adiciona uma imagem à página, adiciona-se o alt pq vai ser o texto que é lido para os leitores de tela e também para os sistemas de busca encontrar a imagem -->
+            <div class="institutional_copy">
                     <h6>FAZEMOS SEU EVENTO ACONTECER</h6>
                     <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi voluptatum totam nulla ducimus, nemo cum quo, libero facere nobis voluptas. 
                     </p>
-                    <button> Saiba mais</button>
+                    <button class="btn btn--institutional"> Saiba mais</button>
             </div>
         </section>
 
-        <section>
-            <div >
-                    <h6> Você informa a temática e nós planejamos umevento com tecnologia e</h6>
-                    <h2><span>MUITO+</span> Diversão</h2>
-                    <button>FAZER COTAÇÃO</button>
+        <section class="quote">
+            <div class="container quote_container">
+                <div class="quote_copy">
+                    <h6> Você informa a temática e nós planejamos umevento com tecnologia e
+                    </h6>
+                    <h2><span class="copy--primary">MUITO+
+                    </span> Diversão</h2>
+                    <button class="btn btn--quote">FAZER COTAÇÃO</button>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer><!-- cria itens no rodapé da página-->
-        <h2>Studi<span>on</span><span> Eventos</span></h2>
-        <form><!-- cria formulários-->
-
-            <label>receba news e promoções</label> <!--cria um rótulo que identifica o elemento input.-->
-
-            <input type="email" placeholder="email"/> <!--o input type="tex" cria um campo para digitgitação, no caso do "email" é o tipo de texto onde ficará digitável o texto. 
-                O campo placeholder="email" é onde fica o nome transparente na caixa de digitação onde "email" é o tipo de texto a digitar.-->
-
-            <button type="submit">Enviar</button> <!--o type="submit" significa que será um botão do tipo enviar.-->
-
-        </form>
-        <ul>
-            <li><a href="http://facebook.com/" target="_blank"> Facebook</a></li>
-            <li><a href="http://twitter.com/" target="_blank">Twitter</a></li>
-            <li><a href="http://youtube.com/" target="_blank">Youtube</a></li>
-            <hr/>
-            <p> 
-            <small>Studi <span>ON</span> - Todos os direitos reservados.</small><!--deixa o texto menor quando precisa.-->
-            </p>
-        </ul>
+    <footer class="footer"><!-- cria itens no rodapé da página-->
+        <div class="conainer footer_container">
+            <h2 class="logo-studion">
+                Studi<span class="copy--primary">on</span>
+                <span class="logo-studion_subtitle"> 
+                    Eventos
+                </span>
+            </h2>
+            <form class="footer_form"><!-- cria formulários-->
+    
+                <label for="email">receba news e promoções</label> <!--cria um rótulo que identifica o elemento input.-->
+            <div class="footer_email">
+                <input id="email" type="email" placeholder="email"/> <!--o input type="tex" cria um campo para digitgitação, no caso do "email" é o tipo de texto onde ficará digitável o texto. 
+                    O campo placeholder="email" é onde fica o nome transparente na caixa de digitação onde "email" é o tipo de texto a digitar.-->
+    
+                <button type="submit">
+                    <i class="fas fa-paper-plane fa-2x"></i>
+                </button> <!--o type="submit" significa que será um botão do tipo enviar.-->
+            </div>
+            </form>
+            <ul class="footer_social">
+                <li><a href="http://facebook.com/" target="_blank"> 
+                    <i class='fab fa-facebook fa-2x'></i>
+                    <!-- é um elemento i onde fab é font awsome brand (onde pega as marcas como facebook) e fa-facebook onde já vem definida da folha de estilos importada do font awsome -->
+                </a>
+            </li>
+                <li><a href="http://twitter.com/" target="_blank">
+                    <span class="fa-stack ">
+                        <i class="fas fa-circle fa-stack-2x fa-inverse"></i>
+                        <i class="fab fa-twitter fa-stack-1x "></i>
+                      </span>
+                </a>
+            </li>
+                <li><a href="http://youtube.com/" target="_blank">
+                    <i class="far fa-play-circle fa-2x"></i>
+    
+                </a>
+            </li>
+        </div>
+                <hr>
+                <p> 
+                <small>Studi<span class="copy--primary">ON</span> - Todos os direitos reservados.</small><!--deixa o texto menor quando precisa.-->
+                </p>
+            </ul>
+        
     </footer>
 
     </p>
