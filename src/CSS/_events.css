@@ -1,0 +1,53 @@
+.hero_image {
+    width: 100%;
+}
+.hero_copy {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    padding:  6rem 10rem;
+}
+
+.hero_copy h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+    letter-spacing: -0.3125rem;
+    color: var(--color-primary);
+}
+
+.hero_copy p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.875rem;
+    color: var(--color-copy--alt);
+}
+.events_copy{
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: left;
+
+}
+
+.events {
+    display: grid;
+    grid-template-columns: 0.3fr auto;
+    gap: 3rem;
+    align-items: center;
+    padding: 5.875rem 2.25rem;
+}
+.singer_image{
+    max-width: 187px;
+    max-height: 190px;
+}
+.gallery_image {
+    max-width: 1920px;
+    max-height: 1081px;
+    margin: 0 -4rem;
+}
+
+.events_copy button{
+    float: right;
+}

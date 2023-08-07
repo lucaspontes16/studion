@@ -1,0 +1,163 @@
+#slider {
+  /* para selecionar um elemento por id(que está localizado no doc HTML) utiliza-se #.*/
+  background-color: #000;
+  color: #fff;
+  padding-top: 7rem;
+  /* a cor do fundo da página*/
+  /* 1 forma de adicionar imagem de backgoun, 
+    background-image: url('./images/banner.jpg');  
+    usado para adicionar uma imagem de background, dentro do url pode ser adicionado com aspas simples ou duplas, antes de digitar o caminho da imagem adicione o ./ para o site ficar relativo ao lugar onde fica o style css.
+    
+    background-size: cover;  define o tamanho da imagem ao fundo. A opção cover foi usada para que a imagem preencha 100% de largura e altura sem deformar a imagem.
+    
+    background-repeat: no-repeat; evita que a imagem repita no backgound;
+    
+    background-position: center ; /* para que a imagem fique posicionada no centro do backgorund*/
+}
+.slide {
+  position: relative; /*não deixa elementos filho dessa classe saia para fora do elemento slide*/
+  height: 90vh; /* foi usado na altura a função calc que calculou 100% da vh - 7.75rem */
+}
+.slide__background-image {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  /*seguindo a mesma logica da primeira dica de adicionar imagem ao background*/
+  object-position: center;
+}
+
+.slide_copy {
+  position: absolute;
+  top: 0; /*permite que o elemento fique no topo*/
+  left: 0; /*deixou o elemento para a metade da wieport a esqueda*/
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  padding-left: 50vw;
+  align-items: center;
+}
+.slide_copy h6 {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1875rem; /* serve para o espaçamento entre caracteres*/
+  margin: 0;
+}
+
+.slide_copy h2 {
+  font-size: 6.25rem;
+  text-transform: uppercase;
+  line-height: 6.25rem;
+}
+.slide_copy h2 {
+  display: block; /* faz com que haja uma quebra de linha, e que o texto fique com a quebra mesmo se a largura da tela mudar.*/
+}
+
+.counter {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-transform: uppercase;
+}
+#counter {
+  background-color: var(--color-primary);
+  /*como o counter é id, usa-se #*/
+  color: #fff;
+  text-transform: uppercase; /* a cor das fontes do ul foram mudadas logo no couter por ele ser um elemento pai da sessão*/
+}
+
+.counter_container {
+  display: grid; /* o tipo de display fo grid para poder adicionar as colunas*/
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /*no repeat foram feitas, auto-fill faz com que o css calcule automaticamente quantas colunas ele deve ter, minmax define o tamanho minimo e maximo 3 colunas divididas em 1 fração pra cada, */
+  place-items: center; /* é uma unidade agregadora, serve tanto como justify itens e aling itens e serve para afetar os filhos, afeta tanto horizontal quanto vertical*/
+  padding: 4.375rem 0;
+}
+
+.counter_container h3 {
+  font-size: 2.1875rem;
+}
+.counter_container h3 small {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.institutional {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3.125rem; /*serve para definir a distancia entre um elemento e outro, no caso a imagem separanda do texto*/
+  align-items: center;
+  padding: 4.375rem;
+}
+
+.institutional__image {
+  max-width: 550px;
+}
+
+.institutional_copy {
+  padding: 0 1.875rem;
+}
+
+.institutional_copy h6 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.institutional_copy h4 {
+  font-size: 1.5625rem;
+  margin-top: 1rem;
+}
+
+.institutional p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6875rem;
+  margin-bottom: 0;
+  margin-bottom: 2.5rem; /*para ser adicionada uma outra margem*/
+}
+.quote {
+  background-image: url(../images/parallax.jpg);
+  background-attachment: fixed; /*efeito de paralax na página*/
+  background-repeat: no-repeat; /*para não repetir a imagem de background*/
+  background-size: cover;
+  background-position: center;
+  /*efeito de paralax completo. Cria um efeito de profundidade na imagem assim pensando que a imagem está sempre fixa
+    atrás do site.*/
+}
+
+.quote_container {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  min-height: 80vh; /* A altura minima da altura disponível*/
+}
+
+.quote_copy {
+  background-color: #fff;
+  padding: 5.625rem 4.375rem;
+}
+.quote_copy h6 {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: 0.1875rem;
+  line-height: 1.4375rem;
+  max-width: 53ch; /*definido a largura máxima por caractere*/
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.quote_copy h2 {
+  line-height: 5rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.1875rem;
+  margin: 1.875rem 0;
+}
+.quote_copy h2 span {
+  display: block;
+}

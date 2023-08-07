@@ -1,0 +1,42 @@
+.btn {
+  cursor: pointer; /*faz com que quando passar o mouse em cima o cursor vire uma mão*/
+  width: 12rem;
+  padding: 1rem 1rem; /* foi definido um padding para a altura de espaçamento e a largura de espaçamento entre o texto e as bordas do botão*/
+  color: var(--color-primary);
+  border: 0.125rem solid #fff;
+  /*adicionamos tres valores para a borda, valor da espessura da linha, o estilo da linha e a cor da borda*/
+  border-radius: 5rem; /* serve para mudar o canto da borda, nesse caso deixou os cantos mais arredondados*/
+  background: unset; /*reseta a propriedade para um valor mais neutro possível. Nesse caso deixou o botão com um background transparente*/
+  font-size: 0.87rem;
+  font-weight: 700;
+  text-transform: uppercase;/*define o estilo da fonte, se é maiuscula ou minuscula*/
+  letter-spacing: 0.087rem;
+  transition: 0.3s all ease; /* configura a transição de animação. O 0.5s é o tempo da transição all será o que eu quero transicionar que no caso é tudo e o ease é a curva de animação.*/
+}
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn--institutional,
+.btn--contact {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: #fff;
+  /*essa é a maneira de fazer um seletor que vai funcionar para mais de um caso */
+}
+
+.btn--institutional:hover,
+.btn--contact:hover {
+  color: var(--color-copy);
+  background: unset;
+  box-shadow: 0 1rem 1rem #0006; /* onde 0=x (largura), y=1rem de (altura), 1rem de blur, cor da sombra */
+}
+
+.btn--contact:hover {
+  color: #fff;
+}
+
+.btn--quote {
+  color: var(--color-copy);
+  border-color: var(--color-copy);
+  background: unset;
+}

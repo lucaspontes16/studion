@@ -16,10 +16,12 @@
 <body><!-- o corpo do documento-->
     <nav class="navbar">
         <div class="container navbar__container" >        <!--é importante por conta da semantica do, para que os sistemas de busca e pessoas com deficiencia visual encontrem a página.-->
-
-         <h1 class="logo-studion"> 
+            <h1 class="logo-studion"> 
+             <a href="index.html">
+                 <!--Serve para quando o cliente clicar na logo do cabeçalho, volte para a pagina inicial-->
             Studi<span class="copy--primary">on</span>
             <span class="logo-studion_subtitle">Eventos</span>
+            </a>
          </h1> 
 
             <!-- h1 é o tamanho da fonte podendo ir até h6 que seria a menor fonte, span permite que estilize uma parte do texto de forma diferente.Foi adiconado classe no Studi e no on e eventos porque será a logo do cabeçalho.
@@ -55,79 +57,23 @@
             </ul>
         </div>
     </nav>
-    <header> <!--A parte que é utilizada acima da dobra do site. Como se fosse um cabeçalho-->
-
-        <div id="slider"> <!--é usado dentro do header, significa uma divisão,é um elemento multiuso.Pode-se colocar qualquer coisa, como lista etc. Quando tem o "id", é para atribuir um nome ao elemento,para uma melhor identificação.
-        -->
-            <div class="slide">
-                <img class="slide__background-image" 
-                src="./images/banner.jpg" 
-                alt="studion Banner">
-                <!-- segunda forma de adicionar a imagem ao background-->
-                <div class="slide_copy">
-                    <h6> 
-                        <span class="copy--primary">Próximo evento</span> - Dia 25 de setembro as 19h
-                    </h6>
-                    <h2><span class="copy--primary">Creative</span>  Minds</h2>
-                    <button class="btn btn--slide">Saiba mais</button> <!--adiciona um botão com nome. Em class há duas classes btn e btn--slide-->
+    <header> 
+        <div class="hero">
+            <img class="hero_image" img src="./images/Camera.jpg" alt="hero_background" />
+            <div class="container hero_container">
+                <div class="hero_copy">
+                    <h6>CONFIRA ALGUMAS FOTOS</h6>
+                    <h2>.galeria</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, aliquam in! Ullam officiis aliquid, eveniet rerum aspernatur voluptate quae ut deleniti eaque ipsum fugiat libero. Deleniti delectus necessitatibus esse voluptates?</p>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="counter" class="counter"> <!--é similar ao elemento div, por isso adiciona-se um id para melhor identificação. Id definido foi counter, para melhor adequação ao java script-->
-             <ul class="container counter_container"> <!--Counter__container porque ele é a caixa que contem o conteudo do counter-->
-                 <li>
-                     <h3> + de 500
-                        <small>
-                            eventos realizados
-                            <!--foi utilizado o small para não criar outro elemento separado do h3-->
-                        </small>
-                     </h3>
-                    </li>
-                 <li>
-                     <h3>
-                         + de 1.000.000
-                         <small>
-                            de ingressos vendidos
-                        </small>
-                        </h3> 
-                    </li>
-                 <li>
-                     <h3>
-                     + de 300
-                     <small>
-                        empresas atendidas
-                     </small>
-                 </h3>
-                    
-                </li>
-             </ul>
-             </section>
-
-        <section class="container institutional">
-            <img class="institutional__image" src="./images/institutional.jpg" alt="studion on institutional"> <!--adiciona uma imagem à página, adiciona-se o alt pq vai ser o texto que é lido para os leitores de tela e também para os sistemas de busca encontrar a imagem -->
-            <div class="institutional_copy">
-                    <h6>FAZEMOS SEU EVENTO ACONTECER</h6>
-                    <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quasi voluptatum totam nulla ducimus, nemo cum quo, libero facere nobis voluptas. 
-                    </p>
-                    <button class="btn btn--institutional"> Saiba mais</button>
-            </div>
-        </section>
-
-        <section class="quote">
-            <div class="container quote_container">
-                <div class="quote_copy">
-                    <h6> Você informa a temática e nós planejamos umevento com tecnologia e
-                    </h6>
-                    <h2><span class="copy--primary">MUITO+
-                    </span> Diversão</h2>
-                    <button class="btn btn--quote">FAZER COTAÇÃO</button>
-                </div>
-            </div>
-        </section>
+      <section class="container gallery_container">
+          <img class="gallery_image" src="./images/singers.jpg" alt="studion gallery"/>
+      </section>
     </main>
 
     <footer class="footer"><!-- cria itens no rodapé da página-->

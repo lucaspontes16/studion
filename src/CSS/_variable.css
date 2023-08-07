@@ -1,0 +1,7 @@
+:root {
+  --color-copy: #333;
+  --color-copy--alt: #ccc; 
+  --color-primary: #ffc500;
+  /* para criar uma variável utiliza-se --, essa variável de cor foi criada para não precisar ficar digitando a o numero da cor hexadecimal assim fica mais fácil, o nome é colo-primary porque é a cor principal do site que será mais utilizada.*/
+  --default-padding: 1rem;
+}

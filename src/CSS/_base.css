@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  /*onde será alterado o html,o root é pq está na raiz do documento*/
+  color: var(--color-copy);
+  /*cor de texto padrão do site */
+}
+
+body {
+  margin: 0;
+}
+
+head,
+main,
+footer {
+  overflow-x: hidden; /* vai afetar as tres propriedades e oculta qualquer conteudo de x além da largura que ele viria */
+}
+
+ul {
+  display: flex; /*deixa a lista ordenada em paisagem*/
+  list-style: none; /*adiciona os estilos de lista*/
+  padding-left: 0; /* ajusta o tamanho da padiding da pagina, com esse valor os nomes ficaram alinhados à esqueda*/
+}
+.container {
+  max-width: 1140px; /*quando queremos uma largura maxima para garantir que os objetos fiquem no meio da página.*/
+  margin: 0 auto;
+}
+
+.logo-studion {
+  font-size: 2.375rem;
+  font-weight: 900;
+  line-height: 1ch; /*é o tamanho do espaçamento entre linhas"relativo ao tamanho da altura do glifo 0 da fonte*/
+  text-transform: uppercase;
+  text-align: right;
+  /*foi adicionado o peso da fonte que poderia ser black ou o nomero para ficar mais forte. Pode pegar no google fonts também.
+    E também foi colocado todo o texto em caixa alta.
+    observe que a classe .logo-studion está no body, h1 do html.
+    O alinamento de toda a logo foi a direita */
+}
+
+.logo-studion a {
+  text-decoration: none;
+  color: #fff; /*quando o texto da logo ficar azul,usa o none para tirar a borda e escolhe a cor*/
+}
+
+.logo-studion_subtitle {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 300;
+}

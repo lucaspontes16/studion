@@ -1,0 +1,46 @@
+.navbar {
+  position: absolute; /*deixa a caixa da navbar fixa na navegação  da página*/
+  z-index: 1; /*funciona como camada, permite que o elemento sobreponha o outro como uma camada*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*background-color: #000;  serve para adcionar a cor do fundo. 1ºn vermelho / 2ºn verde / 3ºn azul / 4ºn transparencia; como são hexadecimais eles trabalham de 0 a F */
+  color: #fff; /*adiciona cor a fonte*/
+}
+
+.navbar__container {
+  display: grid; /* mostra que o tipo de display será grid*/
+  grid-template-columns: 1fr 9fr; /* informa a quantidade de colunas e o tamanho de cada.No caso aqui vai ter 1fr para a logo e 9fr para o restante do conteudo da barra*/
+  align-items: center;
+
+  width: 100%;
+  height: 7.75rem;
+
+  padding: 0 1rem; /*quando coloca mais de um valor em rem, o primeiro valor e o tamanho pra cima e para baixo e osegundo valor é esqueda e direita. */
+}
+
+.navbar__links {
+  justify-self: end; /*é uma propriedade de alinhamento para itens que estão dentro de uma grid*/
+}
+
+.navbar__links li {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-right: 4rem; /*existem dois  valores a ser trabalhado, px que equivale a pixel e ren. se quiser adicionar pixels dentro de ren é só fazer ex: quero adicionar 10px. pega o 10px e divide por 16 para saber qual valor aplicar. */
+}
+.navbar__links a {
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  /* o navbar__links a, serviu para atingir apenas os itens da ul em que está navbar__links e atingiu apenas os links ou seja o elemento a.*/
+}
+
+.navbar__links a:active {
+  color: var(--color-primary);
+}
+
+.navbar__links a:hover {
+  /*o hover serve como um estado para o link, quando a gente passar o mouse em cima do link ele muda de cor quando adiciona o color*/
+
+  color: var(--color-primary);
+} /*o hover serve como um estado para o link, quando a gente passar o mouse em cima do link ele muda de cor quando adiciona o color*/

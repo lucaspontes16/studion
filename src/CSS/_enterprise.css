@@ -1,0 +1,84 @@
+
+.hero_image {
+    width: 100%;
+}
+.hero_copy {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    padding:  7rem 10rem;
+}
+.hero_copy h2 {
+    margin: 0;
+    margin-bottom: 3rem;
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+    letter-spacing: -0.3125rem;
+    color: var(--color-primary);
+}
+
+.hero_copy p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.875rem;
+    color: var(--color-copy--alt);
+}
+
+.enterprise_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5625rem;
+    min-height: 80vh;
+    align-items: center;
+    padding: 1rem ;
+}
+.enterprise_image {
+    max-width: 700px;
+}
+
+
+.enterprise_copy {
+    
+}
+
+.enterprise_copy h3 {
+    margin: 0;
+    margin-bottom: 1.875rem;
+}
+
+.enterprise_copy p {
+    margin: 0;
+    font-size: 1.0525rem;
+    line-height: 1.8675rem;
+}
+
+
+
+.enterprise_copy h3 {
+    font-size: 1.425rem;
+    margin-top: 1rem;
+}
+
+.brand_enterprise {
+    background-color: var(--color-primary);
+    max-width: 100%;
+    height: 35.6875rem;
+}
+
+.brand_copy h2{
+text-align: center;
+margin: 0;
+padding: 3.8125rem 43rem;
+color: #333333;
+}
+
+
+.brand_image {
+    object-position: center;
+    padding: 0 21rem;
+}
+
+.video_enterprise {
+    padding: 4rem;
+}
